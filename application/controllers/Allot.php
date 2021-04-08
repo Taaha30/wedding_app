@@ -1,5 +1,6 @@
 <?php
-class Allot extends CI_Controller{
+class Allot extends MY_Controller{
+
 
 function index(){
  // $this->load->model('User_model');
@@ -24,16 +25,24 @@ function allot_guest($userId){
 
  $this->load->model('User_model');
  $this->load->model('Driver_model');
- $user = $this->User_model->get_allot($userId);
- $drivers= $this->Driver_model->drivername();
+ $this->load->model('Car_model');
 
- $data1 = array();
- $data1['driver']= $drivers;
+ $guest = $this->User_model->get_allot($userId);
+ $driver= $this->Driver_model->drivername();
+ $car = $this->Car_model->carname();
+
+ //json_encode($driver);
 
 
- // $data=array();
- // $data['guest']= $user;
- $this->load->view('allot_guest',$data1);
+
+
+
+
+
+
+ // // $data=array();
+ // var_dump($guest);
+ $this->render('allot_guest',['driver'=> $driver,'guest'=> $guest, 'car'=> $car]);
 
 
 
@@ -43,7 +52,11 @@ function allot_guest($userId){
 
 
 function create(){
+ $this->load->model('Allot_model');
  $this->load->model('User_model');
+ $this->load->model('Car_model');
+ $this->load->model('Driver_model');
+
 $this->form_validation->set_rules('guest_name','Guest name','required');
 $this->form_validation->set_rules('driver','Driver','required|valid_email');
 $this->form_validation->set_rules('car','Car','required');

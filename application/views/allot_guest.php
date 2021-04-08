@@ -23,33 +23,49 @@
      <div class="col-md-12">
       <div class="form-group">
        <label> Guest Name</label>
-       <input type="text" name="guest_name" value="<?php echo set_value('name',$guest['guest_name']) ?>" class="form-control">
+       <input type="text" name="guest_name" value="<?php echo set_value('guest_name',$guest['guest_name']) ?>" class="form-control">
        <?php //echo form_error('driver_name'); ?>
        </div>
 
 
     <div class="col-md-12">
      <div class="form-group">
-      <label>Driver Name</label>
+       <label>Driver Name</label>
       <select class="form-control" name="driver">
-       <?php
-       foreach ($driver as $key => $value) {
-        echo '<option value="'.$value['driver_name'].'"  <option>';
 
 
-        // code...
-       } ?>
+       <?php if (count($driver)) : ?>
+       <?php foreach ($driver as $drivers) : ?>
 
-      </select>
+
+        <option value= "<?php  echo $drivers->driver_name ?>"> <?php echo $drivers->driver_name ?></option>
+
+       <?php endforeach; ?>
+      <?php else: ?>
+      <?php endif; ?>
+       </select>
       </div>
+      <div class="form-group">
+        <label>Car</label>
+       <select class="form-control" name="driver">
+
+
+        <?php if (count($car)) : ?>
+        <?php foreach ($car as $value) : ?>
+
+
+         <option value= "<?php  echo $value->car_name ?>"> <?php echo $value->car_name ?></option>
+
+        <?php endforeach; ?>
+       <?php else: ?>
+       <?php endif; ?>
+        </select>
+       </div>
 
 
 
-        <div class="form-group">
-         <label>Car</label>
-         <input type="text" name="car" value="<?php //echo set_value('car') ?>" class="form-control">
-         <?php //echo form_error('car'); ?>
-         </div>
+
+
 
          <div class="form-group">
           <!-- <label>guest</label> -->

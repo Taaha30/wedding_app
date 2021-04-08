@@ -1,5 +1,6 @@
 <?php
-class Driver extends CI_Controller{
+class Driver extends MY_Controller{
+
 
 function index(){
  $this->load->model('Driver_model');
@@ -7,7 +8,7 @@ function index(){
  $data = array();
  $data['driver']= $driver;
 
- $this->load->view('driver_list',$data);
+ $this->render('driver_list',$data);
 
 }
 
@@ -27,7 +28,7 @@ $this->form_validation->set_rules('car','Car','required');
 
 if ($this->form_validation->run() == FALSE){
 
- $this->load->view('add_driver');
+ $this->render('add_driver');
 
 
 }

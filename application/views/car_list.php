@@ -33,27 +33,27 @@
      <table class="table table-striped">
       <tr>
        <th>ID</th>
-       <th>DRIVER Name</th>
-       <th>Contact</th>
-       <th>Car</th>
+       <th>Car Name</th>
+       <th>Car no</th>
+       <th>Car type</th>
 
        <th>Edit</th>
        <th>Delete</th>
       </tr>
 
-      <?php  if (!empty($driver)) {foreach ($driver as $user) {
+      <?php  if (!empty($car)) {foreach ($car as $user) {
        // code...
        ?>
       <tr>
-       <td><?php echo $user['uid'] ?></td>
-       <td><?php echo $user['driver_name'] ?></td>
-       <td><?php echo $user['contact'] ?></td>
-       <td><?php echo $user['car'] ?></td>
+       <td><?php echo $user->uid ?></td>
+       <td><?php echo $user->car_name ?></td>
+       <td><?php echo $user->car_no ?></td>
+       <td><?php echo $user->car_type ?></td>
        <td>
-        <a href="<?php echo base_url().'index.php/user/edit/'.$user['uid']; ?>" class="btn btn-primary">Allot</a>
+        <a href="<?php //echo base_url().'index.php/user/edit/'.$user['uid']; ?>" class="btn btn-primary">Allot</a>
        </td>
        <td>
-        <a href="<?php echo base_url().'index.php/user/delete/'.$user['uid']; ?>" class="btn btn-danger">Delete</a>
+        <a href="<?php //echo base_url().'index.php/user/delete/'.$user['uid']; ?>" class="btn btn-danger">Delete</a>
        </td>
       </tr>
 

@@ -26,6 +26,11 @@
 
 
     </div>
+    <br>
+    <div class="">
+          <h2> hi  <?php   echo  $this->session->email ; ?> </h2>
+
+    </div>
 
 
    </div>
