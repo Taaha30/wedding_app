@@ -35,7 +35,7 @@ function hotel_data($email){
 
 // update
 function update_hotel($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('hotel', $formarray);
 
 

@@ -36,7 +36,7 @@ function room_data($hotel_name){
 }
 // update
 function update_room($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('room', $formarray);
 
 

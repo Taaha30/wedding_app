@@ -15,6 +15,10 @@ function get_function($wedding_url){
  return $query->result();
 
 }
+function all(){
+ return $users= $this->db->get('wedding_function')->result_array();
+
+}
 
 
 function function_info($email){
@@ -26,7 +30,7 @@ function function_info($email){
 
 }
 function update_function($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('wedding_function', $formarray);
 
 

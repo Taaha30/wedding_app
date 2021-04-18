@@ -19,7 +19,7 @@ function driver_info($email){
 
 }
 function update_driver($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('driver', $formarray);
 
 

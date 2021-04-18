@@ -35,7 +35,7 @@ function all(){
 
 
 function update_car($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('car', $formarray);
 
 

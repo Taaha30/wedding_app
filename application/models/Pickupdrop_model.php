@@ -19,7 +19,7 @@ function venue_info($email){
 
 }
 function update_venue($id,$formarray){
- $this->db->where('uid', $id);
+ $this->db->where('created_by', $id);
   return $query=$this->db->update('pickupdrop_location', $formarray);
 
 
